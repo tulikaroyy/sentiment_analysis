@@ -142,9 +142,9 @@ body, .stApp {{
 
 st.markdown('<div class="main-content-wrapper">', unsafe_allow_html=True)
 st.markdown('<div class="pixel-title">Your fav Sentiment Analyzer</div>', unsafe_allow_html=True)
-st.markdown('<label class="pixel-label" for="pixel-textarea">Type your thought:</label>', unsafe_allow_html=True)
+st.markdown('<label class="pixel-label" for="pixel-textarea">Type in your thought:</label>', unsafe_allow_html=True)
 user_input = st.text_area("", key="pixel-textarea", height=110)
-if st.button("Analyze Sentiment"):
+if st.button("Lets Analyze"):
     if user_input.strip():
         result = classifier(user_input)[0]
         label = result['label']
@@ -156,7 +156,7 @@ if st.button("Analyze Sentiment"):
             unsafe_allow_html=True
         )
     else:
-        st.warning("Please enter something to analyze! 🎮")
+        st.warning("Please enter something to analyze!")
 st.markdown(
     """
     <div class="pixel-footer">
